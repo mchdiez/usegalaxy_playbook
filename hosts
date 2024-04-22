@@ -1,0 +1,4 @@
+[galaxyservers]
+usegalaxy.es ansible_connection=local ansible_user=ubuntu
+[dbservers:children]
+galaxyservers
