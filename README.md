@@ -6,3 +6,5 @@ Notes about the configuration of this specific ansible galaxy playbook:
         - listen        *:80 default_server;
 instead of:
         - listen        *:443 ssl default_server;
+
+2. For TUSD module installation, the package "ansible'core" had to be installed separately from ansible as a whole using pip (following these instructions: https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html). Not doing so led to legacy version issues with unpack module.
