@@ -172,6 +172,17 @@ nginx_conf_http:
       image/png
       image/svg+xml
       image/x-icon
+
+# Slurm
+slurm_roles: ['controller', 'exec'] # Which roles should the machine play? exec are execution hosts.
+slurm_nodes:
+- name: usegalaxy # Name of our host
+  CPUs: 16         # Number of cores of your VM
+slurm_config:
+  SlurmdParameters: config_overrides   # Ignore errors if the host actually has cores != 8
+  SelectType: select/cons_res
+  SelectTypeParameters: CR_CPU_Memory  # Allocate individual cores/memory instead of entire node
+
 # TUS
 galaxy_tusd_port: 1080
 galaxy_tus_upload_store: /data/tus

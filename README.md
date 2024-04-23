@@ -8,3 +8,5 @@ instead of:
         - listen        *:443 ssl default_server;
 
 2. For TUSD module installation, the package "ansible'core" had to be installed separately from ansible as a whole using pip (following these instructions: https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html). Not doing so led to legacy version issues with unpack module.
+
+3. Using 16 cores for slurm use. Check VM cores thorugh: nproc command. More info on CPUs: lscpu command.

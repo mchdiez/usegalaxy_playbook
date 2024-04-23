@@ -30,6 +30,8 @@
         dest: /libraries/
 
   roles:
+    - galaxyproject.repos
+    - galaxyproject.slurm
     - galaxyproject.tusd
     - usegalaxy_eu.apptainer
     - galaxyproject.galaxy
