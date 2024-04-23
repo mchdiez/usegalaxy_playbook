@@ -32,8 +32,14 @@ galaxy_job_config:
 
 galaxy_config:
   galaxy:
+    # Branding
+    brand: GALAXY-ES
+    logo_src: "https://www.uv.es/recursos/fatwirepub/ccurl/1019/505/INB_portada.png"
+    themes_config_file: "{{ galaxy_config_dir }}/themes.yml"
+    # Support
+    #support_url: "https://example.org/support"
+    terms_url: "https://usegalaxy-eu.github.io/gdpr/tos.html"
     # Main Configuration
-    brand: "GALAXY-ES"
     admin_users:
     - mchavero@bsc.es
     database_connection: "postgresql:///{{ galaxy_db_name }}?host=/var/run/postgresql"
@@ -92,6 +98,13 @@ galaxy_config:
         pools:
           - job-handlers
           - workflow-scheduler
+
+galaxy_config_files_public:
+  - src: files/galaxy/welcome.html
+    dest: "{{ galaxy_mutable_config_dir }}/welcome.html"
+galaxy_config_files:
+  - src: files/galaxy/themes.yml
+    dest: "{{ galaxy_config.galaxy.themes_config_file }}"
 
 galaxy_extra_dirs:
   - /data
